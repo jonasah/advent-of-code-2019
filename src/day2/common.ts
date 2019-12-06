@@ -1,10 +1,7 @@
-import fs from 'fs';
-import path from 'path';
+import { getInput } from '../common/getInput';
 
-export function getInput(): number[] {
-  return fs
-    .readFileSync(path.join(__dirname, 'day2-input.txt'), 'utf-8')
-    .trim()
+export function getInputProgram(): number[] {
+  return getInput(2)
     .split(',')
     .map(opcode => parseInt(opcode));
 }

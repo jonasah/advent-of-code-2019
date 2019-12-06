@@ -1,7 +1,7 @@
-import { getInput, executeProgram, runProgram } from './common';
+import { getInputProgram, runProgram } from './common';
 
 export function day2_1() {
-  const program = getInput();
+  const program = getInputProgram();
 
   const output = runProgram(program, 12, 2);
 

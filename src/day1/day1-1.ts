@@ -1,7 +1,7 @@
-import { calculateFuel, calculateTotalFuel, getInput, writeResult } from './common';
+import { calculateFuel, calculateTotalFuel, getInputMasses, writeResult } from './common';
 
 export function day1_1() {
-  const masses = getInput();
+  const masses = getInputMasses();
   const totalFuel = calculateTotalFuel(masses, calculateFuel);
   writeResult(1, totalFuel);
 }

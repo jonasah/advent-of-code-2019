@@ -1,12 +1,9 @@
-import fs from 'fs';
-import path from 'path';
+import { getInput } from '../common/getInput';
 
-export function getInput(): number[] {
-  return fs
-    .readFileSync(path.join(__dirname, 'day1-input.txt'), 'utf-8')
+export function getInputMasses(): number[] {
+  return getInput(1)
     .split('\n')
-    .filter(line => !!line)
-    .map(line => parseInt(line.trim()));
+    .map(mass => parseInt(mass));
 }
 
 export function calculateFuel(mass: number): number {

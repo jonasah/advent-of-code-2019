@@ -1,7 +1,7 @@
-import { getInput, runProgram } from './common';
+import { getInputProgram, runProgram } from './common';
 
 export function day2_2() {
-  const program = getInput();
+  const program = getInputProgram();
 
   for (let noun = 0; noun <= 99; ++noun) {
     for (let verb = 0; verb <= 99; ++verb) {

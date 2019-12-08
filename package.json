@@ -6,15 +6,28 @@
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.14",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
     "ts-jest": "^24.2.0",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.2",
-    "yargs": "^15.0.2"
+    "yargs": "^15.0.2",
+    "yarn-run-all": "^3.1.1"
   },
   "scripts": {
     "start": "ts-node ./src/",
-    "test": "jest"
+    "test": "jest",
+    "test:pre-push": "jest --silent common",
+    "format:check": "prettier --check \"**/*.ts\"",
+    "format:fix": "prettier --list-different --write \"**/*.ts\"",
+    "format:fix:staged": "pretty-quick --staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run-s -y format:fix:staged",
+      "pre-push": "yarn run-p -y test:pre-push format:check"
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { getInput } from '../common/getInput';
+import { getInput } from '../input/getInput';
 
 export function getInputProgram(): number[] {
   return getInput(2)

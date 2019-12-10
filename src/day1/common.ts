@@ -1,4 +1,4 @@
-import { getInput } from '../common/getInput';
+import { getInput } from '../input/getInput';
 
 export function getInputMasses(): number[] {
   return getInput(1)

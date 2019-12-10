@@ -1,4 +1,4 @@
-import { manhattanDistance } from '../common/math';
+import { manhattanDistance } from '../math/math';
 import { getInputWires, getIntersection } from './common';
 import { Wire } from './day3.types';
 

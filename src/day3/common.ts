@@ -1,5 +1,5 @@
-import { getInput } from '../common/getInput';
-import { manhattanDistance, minMax } from '../common/math';
+import { getInput } from '../input/getInput';
+import { manhattanDistance, minMax } from '../math/math';
 import { MaybeIntersection, Point, Segment, Wire } from './day3.types';
 
 export function getInputWires(): [Wire, Wire] {

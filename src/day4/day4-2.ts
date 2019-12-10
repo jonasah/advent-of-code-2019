@@ -9,7 +9,7 @@ export const day4_2 = (): PuzzleResult => ({
 });
 
 export const exactlyTwoAdjacentDigitsAreTheSame = (password: number) =>
-  (password.toString().match(/(\d)\1+/g) || []).reduce(
+  (password.toString().match(/(\d)\1+/g) ?? []).reduce(
     (acc, current) => acc || current.length === 2,
     false
   );

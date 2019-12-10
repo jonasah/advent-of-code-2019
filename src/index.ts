@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-magic-numbers */
+
 import './extensions';
 
 import yargs from 'yargs';
@@ -22,7 +24,7 @@ const argv = yargs.version(false).command('$0 <day...>', '', yargs => {
   });
 }).argv;
 
-const days = (argv.day as number[]).sort();
+const days = (argv.day as number[]).sort((a, b) => (a < b ? -1 : 1));
 
 days
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

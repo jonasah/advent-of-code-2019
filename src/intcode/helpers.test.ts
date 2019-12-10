@@ -20,7 +20,7 @@ describe('Helpers', () => {
       [33, 3]
     ]
   ])(`${getParameterValues.name}(%p)`, (memory, expected) => {
-    const inputs = getParameterValues(memory as number[], 0, 2);
+    const inputs = getParameterValues(memory, 0, 2);
     expect(inputs).toEqual(expected);
   });
 });

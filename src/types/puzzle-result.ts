@@ -1,6 +1,6 @@
 export interface PuzzleResult {
   day: number;
-  part: 1 | 2;
+  part: number;
   message: string;
   answer: number;
 }

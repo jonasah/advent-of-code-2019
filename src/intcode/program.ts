@@ -5,6 +5,9 @@ import { InputInstruction, OutputInstruction } from './instructions/input-output
 import { JumpIfFalseInstruction, JumpIfTrueInstruction } from './instructions/jump';
 import { Instruction, Opcode, Result } from './types';
 
+const nounInputAddress = 1;
+const verbInputAddress = 2;
+
 export class Program {
   private readonly instructionMap: Map<Opcode, Instruction>;
 
@@ -37,8 +40,8 @@ export class Program {
       this.input = input;
     } else if (input != null) {
       // day 2
-      memory[1] = input.noun;
-      memory[2] = input.verb;
+      memory[nounInputAddress] = input.noun;
+      memory[verbInputAddress] = input.verb;
     }
 
     let ip = 0;
@@ -55,7 +58,7 @@ export class Program {
     }
 
     return {
-      output: memory[0], // day 2
+      output: memory.first(), // day 2
       outputs: this.outputs, // day 5
       memory
     };

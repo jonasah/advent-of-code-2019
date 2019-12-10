@@ -1,15 +1,19 @@
 import { ParameterMode } from './types';
 
 export function parseOpcode(value: number) {
+  // eslint-disable-next-line @typescript-eslint/no-magic-numbers
   return value % 100;
 }
 
 export function parseParameterModes(value: number, numInputs: number): ParameterMode[] {
   const modes: ParameterMode[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-magic-numbers
   let modesValue = Math.floor(value / 100);
 
   while (modesValue > 0) {
+    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
     modes.push(modesValue % 10);
+    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
     modesValue = Math.floor(modesValue / 10);
   }
 

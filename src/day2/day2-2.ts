@@ -11,7 +11,7 @@ export function day2_2(): PuzzleResult {
       if (output === 19690720) {
         return {
           day: 2,
-          challenge: 2,
+          part: 2,
           message: `Noun: ${noun}. Verb: ${verb}. Answer`,
           answer: getAnswer(noun, verb)
         };

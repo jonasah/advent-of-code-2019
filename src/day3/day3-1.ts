@@ -5,7 +5,7 @@ import { Wire } from './day3.types';
 
 export const day3_1 = (): PuzzleResult => ({
   day: 3,
-  challenge: 1,
+  part: 1,
   message: 'Distance',
   answer: getDistance(getInputWires())
 });

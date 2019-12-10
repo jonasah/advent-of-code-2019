@@ -13,7 +13,7 @@ export function calculateFuelWithAdditionalFuel(mass: number): number {
 
 export const day1_2 = (): PuzzleResult => ({
   day: 1,
-  challenge: 2,
+  part: 2,
   message: 'Total fuel',
   answer: calculateTotalFuel(getInputMasses(), calculateFuelWithAdditionalFuel)
 });

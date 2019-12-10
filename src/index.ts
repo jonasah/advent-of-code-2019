@@ -27,8 +27,6 @@ days
   .map(day => funcMap.get(day)!())
   .forEach(results => {
     results.forEach(result => {
-      console.log(
-        `(${result.day}-${result.challenge}) ${result.message}: ${result.answer}`
-      );
+      console.log(`(${result.day}-${result.part}) ${result.message}: ${result.answer}`);
     });
   });

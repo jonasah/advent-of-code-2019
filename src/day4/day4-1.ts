@@ -3,7 +3,7 @@ import { countValidPasswords } from './common';
 
 export const day4_1 = (): PuzzleResult => ({
   day: 4,
-  challenge: 1,
+  part: 1,
   message: 'Valid passwords',
   answer: countValidPasswords(twoAdjacentDigitsAreTheSame)
 });

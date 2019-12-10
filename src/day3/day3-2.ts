@@ -4,7 +4,7 @@ import { Wire } from './day3.types';
 
 export const day3_2 = (): PuzzleResult => ({
   day: 3,
-  challenge: 2,
+  part: 2,
   message: 'Steps',
   answer: getSteps(getInputWires())
 });

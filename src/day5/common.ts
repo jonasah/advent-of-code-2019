@@ -3,7 +3,7 @@ import { Program } from '../intcode';
 
 export function getInputProgram(): Program {
   return new Program(
-    getInput(2)
+    getInput(5)
       .split(',')
       .map(value => parseInt(value))
   );

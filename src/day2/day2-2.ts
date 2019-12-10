@@ -1,6 +1,7 @@
+import { PuzzleResult } from '../types/puzzle-result';
 import { getInputProgram, runProgram } from './common';
 
-export function day2_2() {
+export function day2_2(): PuzzleResult {
   const program = getInputProgram();
 
   for (let noun = 0; noun <= 99; ++noun) {
@@ -8,14 +9,17 @@ export function day2_2() {
       const output = runProgram(program, noun, verb);
 
       if (output === 19690720) {
-        const answer = getAnswer(noun, verb);
-        console.log(`(2-2) Noun: ${noun}. Verb: ${verb}. Answer: ${answer}`);
-        return;
+        return {
+          day: 2,
+          challenge: 2,
+          message: `Noun: ${noun}. Verb: ${verb}. Answer`,
+          answer: getAnswer(noun, verb)
+        };
       }
     }
   }
 
-  console.error(`(2-2) Found no answer`);
+  throw new Error('Found no answer');
 }
 
 export const getAnswer = (noun: number, verb: number) => 100 * noun + verb;

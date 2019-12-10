@@ -20,7 +20,15 @@ const argv = yargs.version(false).command('$0 <day...>', '', yargs => {
   });
 }).argv;
 
-const days = argv.day as number[];
+const days = (argv.day as number[]).sort();
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-days.forEach(day => funcMap.get(day)!());
+days
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  .map(day => funcMap.get(day)!())
+  .forEach(results => {
+    results.forEach(result => {
+      console.log(
+        `(${result.day}-${result.challenge}) ${result.message}: ${result.answer}`
+      );
+    });
+  });

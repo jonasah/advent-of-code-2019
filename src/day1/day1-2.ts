@@ -1,4 +1,5 @@
-import { calculateFuel, calculateTotalFuel, getInputMasses, writeResult } from './common';
+import { PuzzleResult } from '../types/puzzle-result';
+import { calculateFuel, calculateTotalFuel, getInputMasses } from './common';
 
 export function calculateFuelWithAdditionalFuel(mass: number): number {
   const fuel = calculateFuel(mass);
@@ -10,8 +11,9 @@ export function calculateFuelWithAdditionalFuel(mass: number): number {
   return fuel + calculateFuelWithAdditionalFuel(fuel);
 }
 
-export function day1_2() {
-  const masses = getInputMasses();
-  const totalFuel = calculateTotalFuel(masses, calculateFuelWithAdditionalFuel);
-  writeResult(2, totalFuel);
-}
+export const day1_2 = (): PuzzleResult => ({
+  day: 1,
+  challenge: 2,
+  message: 'Total fuel',
+  answer: calculateTotalFuel(getInputMasses(), calculateFuelWithAdditionalFuel)
+});

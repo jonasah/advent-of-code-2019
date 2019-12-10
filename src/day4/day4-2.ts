@@ -1,6 +1,12 @@
+import { PuzzleResult } from '../types/puzzle-result';
 import { countValidPasswords } from './common';
 
-export const day4_2 = () => countValidPasswords(2, exactlyTwoAdjacentDigitsAreTheSame);
+export const day4_2 = (): PuzzleResult => ({
+  day: 4,
+  challenge: 2,
+  message: 'Valid passwords',
+  answer: countValidPasswords(exactlyTwoAdjacentDigitsAreTheSame)
+});
 
 export const exactlyTwoAdjacentDigitsAreTheSame = (password: number) =>
   (password.toString().match(/(\d)\1+/g) || []).reduce(

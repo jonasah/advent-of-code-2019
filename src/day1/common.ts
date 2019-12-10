@@ -16,7 +16,3 @@ export function calculateTotalFuel(
 ) {
   return masses.reduce((sum, current) => sum + fuelFunction(current), 0);
 }
-
-export function writeResult(challenge: number, totalFuel: number) {
-  console.log(`(1-${challenge}) Total fuel: ${totalFuel}`);
-}

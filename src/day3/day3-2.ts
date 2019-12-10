@@ -1,13 +1,13 @@
+import { PuzzleResult } from '../types/puzzle-result';
 import { getInputWires, getIntersection } from './common';
 import { Wire } from './day3.types';
 
-export function day3_2() {
-  const wires = getInputWires();
-
-  const steps = getSteps(wires);
-
-  console.log(`(3-2) Steps: ${steps}`);
-}
+export const day3_2 = (): PuzzleResult => ({
+  day: 3,
+  challenge: 2,
+  message: 'Steps',
+  answer: getSteps(getInputWires())
+});
 
 export function getSteps(wires: [Wire, Wire]): number {
   const [wire1, wire2] = wires;

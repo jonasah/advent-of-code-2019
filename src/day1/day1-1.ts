@@ -1,7 +1,9 @@
-import { calculateFuel, calculateTotalFuel, getInputMasses, writeResult } from './common';
+import { PuzzleResult } from '../types/puzzle-result';
+import { calculateFuel, calculateTotalFuel, getInputMasses } from './common';
 
-export function day1_1() {
-  const masses = getInputMasses();
-  const totalFuel = calculateTotalFuel(masses, calculateFuel);
-  writeResult(1, totalFuel);
-}
+export const day1_1 = (): PuzzleResult => ({
+  day: 1,
+  challenge: 1,
+  message: 'Total fuel',
+  answer: calculateTotalFuel(getInputMasses(), calculateFuel)
+});

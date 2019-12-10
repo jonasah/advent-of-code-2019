@@ -1,9 +1,6 @@
 import { getInput } from '../input/getInput';
 
-export function countValidPasswords(
-  challenge: number,
-  adjacentRule: (password: number) => boolean
-) {
+export function countValidPasswords(adjacentRule: (password: number) => boolean): number {
   const range = getInputRange();
 
   let validPasswords = 0;
@@ -14,7 +11,7 @@ export function countValidPasswords(
     }
   }
 
-  console.log(`(4-${challenge}) Valid passwords: ${validPasswords}`);
+  return validPasswords;
 }
 
 export function getInputRange(): [number, number] {

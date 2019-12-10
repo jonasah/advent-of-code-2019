@@ -1,5 +1,6 @@
 import { calculateFuel, calculateTotalFuel } from './common';
-import { calculateFuelWithAdditionalFuel } from './day1-2';
+import { day1_1 } from './day1-1';
+import { calculateFuelWithAdditionalFuel, day1_2 } from './day1-2';
 
 describe('Day 1', () => {
   test.each([
@@ -17,6 +18,11 @@ describe('Day 1-1', () => {
   test('calculateTotalFuel', () => {
     const totalFuel = calculateTotalFuel([12, 14, 1969, 100756], calculateFuel);
     expect(totalFuel).toBe(34241);
+  });
+
+  test('day1_1', () => {
+    const { answer } = day1_1();
+    expect(answer).toBe(3154112);
   });
 });
 
@@ -36,5 +42,10 @@ describe('Day 1-2', () => {
       calculateFuelWithAdditionalFuel
     );
     expect(totalFuel).toBe(51314);
+  });
+
+  test('day1_2', () => {
+    const { answer } = day1_2();
+    expect(answer).toBe(4728317);
   });
 });

@@ -1,6 +1,6 @@
 import { isValidPasswordIgnoringRange } from './common';
-import { twoAdjacentDigitsAreTheSame } from './day4-1';
-import { exactlyTwoAdjacentDigitsAreTheSame } from './day4-2';
+import { day4_1, twoAdjacentDigitsAreTheSame } from './day4-1';
+import { day4_2, exactlyTwoAdjacentDigitsAreTheSame } from './day4-2';
 
 describe('Day 4-1', () => {
   test.each([
@@ -13,6 +13,11 @@ describe('Day 4-1', () => {
       twoAdjacentDigitsAreTheSame
     );
     expect(result).toBe(expected);
+  });
+
+  test('day4_1', () => {
+    const { answer } = day4_1();
+    expect(answer).toBe(945);
   });
 });
 
@@ -27,5 +32,10 @@ describe('Day 4-2', () => {
       exactlyTwoAdjacentDigitsAreTheSame
     );
     expect(result).toBe(expected);
+  });
+
+  test('day4_2', () => {
+    const { answer } = day4_2();
+    expect(answer).toBe(617);
   });
 });

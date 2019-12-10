@@ -6,8 +6,8 @@ import {
   parseWire,
   segmentLength
 } from './common';
-import { getDistance } from './day3-1';
-import { getSteps } from './day3-2';
+import { day3_1, getDistance } from './day3-1';
+import { day3_2, getSteps } from './day3-2';
 import {
   getDistanceTestCases,
   getIntersectionTestCases,
@@ -57,6 +57,11 @@ describe('Day 3-1', () => {
     const distance = getDistance([wires[0], wires[1]]);
     expect(distance).toBe(expected);
   });
+
+  test('day3_1', () => {
+    const { answer } = day3_1();
+    expect(answer).toBe(731);
+  });
 });
 
 describe('Day 3-2', () => {
@@ -64,5 +69,10 @@ describe('Day 3-2', () => {
     const wires = input.map(i => parseWire(i));
     const steps = getSteps([wires[0], wires[1]]);
     expect(steps).toBe(expected);
+  });
+
+  test('day3_2', () => {
+    const { answer } = day3_2();
+    expect(answer).toBe(5672);
   });
 });

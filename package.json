@@ -24,7 +24,7 @@
   "scripts": {
     "start": "ts-node ./src/",
     "test": "jest",
-    "test:pre-push": "jest --silent common extensions",
+    "test:pre-push": "jest --silent math extensions",
     "lint:check": "eslint . --ext \".js,.ts\""
   },
   "husky": {

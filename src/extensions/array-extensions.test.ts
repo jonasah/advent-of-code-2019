@@ -1,5 +1,3 @@
-import './array-extensions';
-
 describe('Array extensions', () => {
   test.each([
     [[], (undefined as unknown) as number],

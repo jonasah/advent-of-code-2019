@@ -1,4 +1,3 @@
-import '../common/array-extensions';
 import { getInput } from '../common/getInput';
 import { manhattanDistance, minMax } from '../common/math';
 import { MaybeIntersection, Point, Segment, Wire } from './day3.types';

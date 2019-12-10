@@ -1,4 +1,3 @@
-import '../common/array-extensions';
 import { countValidPasswords } from './common';
 
 export const day4_2 = () => countValidPasswords(2, exactlyTwoAdjacentDigitsAreTheSame);

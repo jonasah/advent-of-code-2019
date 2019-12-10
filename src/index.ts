@@ -20,4 +20,5 @@ const argv = yargs.version(false).command('$0 <day...>', '', yargs => {
 
 const days = argv.day as number[];
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 days.forEach(day => funcMap.get(day)!());

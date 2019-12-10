@@ -31,6 +31,7 @@ export function executeProgram(program: number[]): number[] {
     const input1 = memory[input1Addr];
     const input2 = memory[input2Addr];
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     memory[outputAddr] = operations.get(opcode)!(input1, input2);
 
     ip += 4;

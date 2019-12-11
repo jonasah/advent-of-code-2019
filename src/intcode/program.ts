@@ -11,14 +11,15 @@ const verbInputAddress = 2;
 export class Program {
   private readonly instructionMap: Map<Opcode, Instruction>;
 
-  private input = NaN;
+  private input: number[] = [];
   private outputs: number[] = [];
 
   constructor(private readonly code: number[]) {
     const instructions = [
       new AddInstruction(),
       new MultInstruction(),
-      new InputInstruction(() => this.input),
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      new InputInstruction(() => this.input.shift()!),
       new OutputInstruction(value => this.outputs.push(value)),
       new JumpIfTrueInstruction(),
       new JumpIfFalseInstruction(),
@@ -29,15 +30,16 @@ export class Program {
     this.instructionMap = new Map(instructions.map(inst => [inst.opcode, inst]));
   }
 
-  public run(input?: number | { noun: number; verb: number }): Result {
+  public run(input?: number | number[] | { noun: number; verb: number }): Result {
     const memory = [...this.code];
 
-    this.input = NaN;
+    this.input = [];
     this.outputs = [];
 
     if (typeof input === 'number') {
-      // day 5
-      this.input = input;
+      this.input.push(input);
+    } else if (Array.isArray(input)) {
+      this.input.push(...input);
     } else if (input != null) {
       // day 2
       memory[nounInputAddress] = input.noun;
@@ -59,7 +61,7 @@ export class Program {
 
     return {
       output: memory.first(), // day 2
-      outputs: this.outputs, // day 5
+      outputs: this.outputs,
       memory
     };
   }

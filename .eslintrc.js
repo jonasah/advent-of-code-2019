@@ -30,7 +30,6 @@ module.exports = {
     '@typescript-eslint/no-unnecessary-type-assertion': 'error',
     'no-unused-expressions': 'off',
     '@typescript-eslint/no-unused-expressions': 'error',
-    '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/prefer-for-of': 'error',
     '@typescript-eslint/prefer-nullish-coalescing': 'error',

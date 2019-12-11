@@ -1,4 +1,4 @@
-import { manhattanDistance, minMax } from './math';
+import { getPermutations, manhattanDistance, minMax } from './math';
 
 describe('math', () => {
   test.each([
@@ -20,5 +20,31 @@ describe('math', () => {
   ])('manhattanDistance(%o)', (point, expected) => {
     const result = manhattanDistance(point as { x: number; y: number });
     expect(result).toBe(expected);
+  });
+
+  test.each([
+    [[], [[]]],
+    [[1], [[1]]],
+    [
+      [1, 2],
+      [
+        [2, 1],
+        [1, 2]
+      ]
+    ],
+    [
+      [1, 2, 3],
+      [
+        [3, 2, 1],
+        [2, 3, 1],
+        [2, 1, 3],
+        [3, 1, 2],
+        [1, 3, 2],
+        [1, 2, 3]
+      ]
+    ]
+  ])('getPermutations(%p)', (values, expected) => {
+    const perms = getPermutations(...(values as number[]));
+    expect(perms).toEqual(expected);
   });
 });

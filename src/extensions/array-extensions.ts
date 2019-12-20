@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/unbound-method */
+
 Array.prototype.first = function() {
   return this[0];
 };

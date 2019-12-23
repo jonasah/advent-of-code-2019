@@ -21,9 +21,7 @@ module.exports = {
         'plugin:prettier/recommended'
       ],
       parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module',
-        project: './tsconfig.eslint.json'
+        project: './tsconfig.json'
       },
       rules: {
         '@typescript-eslint/camelcase': ['error', { allow: ['^day\\d{1,2}_[1,2]$'] }],
